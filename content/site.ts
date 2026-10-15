@@ -1264,7 +1264,7 @@ export const siteConfig = {
     // {couple} → "Groom & Bride" nicknames. "" hides a line or image.
     qrCard: {
       coupleNameImage: BRAND.coupleNameImage, // unused: the card sets the names in type like the loader
-      coupleImage: "/Details/coupleImage.png", // couple illustration beside the text
+      coupleImage: "/Details/new-couple-image.png", // couple illustration beside the text
       eyebrow: "The wedding of",
       title: "Find Your Table",
       script: "please be seated",
@@ -1287,7 +1287,7 @@ export const siteConfig = {
   proposal: {
     decos: { ...CORNER_DECOS },
     coupleNameImage: BRAND.coupleNameImage, // unused: names are set in type like the loader
-    coupleImage: "/Details/coupleImage.png", // couple illustration above the question
+    coupleImage: "/Details/new-couple-image.png", // couple illustration above the question
     ornament: DECOR.headerOrnament, // small sprig at the top of the card; "" to hide
     // Eucalyptus sprigs on either side of the couple name; "" to hide one
     nameDecos: { left: DECOR.sideLeft, right: DECOR.sideRight },
@@ -1634,8 +1634,8 @@ Now, as they prepare to say yes before God and the people they love most, Cather
     decos: { ...CORNER_DECOS, headerOrnament: DECOR.headerOrnament },
     embedUrl:
     //https://open.spotify.com/embed/playlist/5sT43YjdM8pJ3xtEkrxyEY?utm_source=generator&si=e5e64aa63fd04356
-      "https://open.spotify.com/embed/playlist/7DhxGDwXwtgx4ibPQdOMYU?utm_source=generator&si=1c9a67323e524e04",
-    spotifyUrl: "https://open.spotify.com/playlist/7DhxGDwXwtgx4ibPQdOMYU",
+      "https://open.spotify.com/embed/playlist/5uxJ1i86mEC1Nah3Lca40m?utm_source=generator&si=a51a040d94184d57",
+    spotifyUrl: "https://open.spotify.com/playlist/5uxJ1i86mEC1Nah3Lca40m?si=UCp5wDi9SniYmjwFttPZwg",
   },
   // Closing "See you there!" section (components/sections/see-you-there.tsx).
   //   photos mode (loadingScreen.display "photos") → full-screen couple photo

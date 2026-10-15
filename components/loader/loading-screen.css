@@ -3972,14 +3972,14 @@
    Desktop: photo left, wording right.
    ========================================================================== */
 .home-hero--plain {
-  --hh-navy: #541C1B;
-  --hh-blue: #8E524D;
-  --hh-ink: #5E3A39;
-  --hh-sky: #D4948A;
-  --hh-leaf: #A3A58B;
-  --hh-butter: #F4DDE0;
+  --hh-navy: var(--color-motif-deep);
+  --hh-blue: var(--color-motif-accent);
+  --hh-ink: var(--color-welcome-text);
+  --hh-sky: var(--color-motif-medium);
+  --hh-leaf: var(--color-motif-silver);
+  --hh-butter: var(--color-motif-blush);
   --hh-edge: none;
-  background: #F8E9E9;
+  background: var(--color-motif-soft);
 }
 
 .home-hero--plain .home-hero-title-main,
@@ -3990,8 +3990,8 @@
 }
 
 .home-hero--plain .home-hero-title-script {
-  color: #D4948A;
-  -webkit-text-fill-color: #D4948A;
+  color: var(--hh-blue);
+  -webkit-text-fill-color: var(--hh-blue);
   text-shadow: none;
 }
 
