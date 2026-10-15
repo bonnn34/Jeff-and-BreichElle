@@ -66,35 +66,35 @@ export type AttireColor = string | { name: string; hex: string }
 
 // ── The couple ──────────────────────────────────────────────────────────────
 const COUPLE = {
-  bride: "Jhellaica Marie C. Jaen",
-  brideNickname: "Jhellaica",
-  groom: "John Patrick O. Lagrama",
-  groomNickname: "Patrick",
+  bride: "Breichelle Lyn Acordon",
+  brideNickname: "Breichelle",
+  groom: "Jeff Ren Liwalas",
+  groomNickname: "Jeff",
 }
 
 // ── Date & times ────────────────────────────────────────────────────────────
-const WEDDING_DATE = "December 23,2026" // e.g. "June 5, 2027"
+const WEDDING_DATE = "December 6, 2026" // e.g. "June 5, 2027"
 const WEDDING_DAY = "Saturday"
 const TIMES = {
-  entourageCall: "2:30 PM", // entourage assembly
-  guestArrival: "2:30 PM", // guests arrival / assembly (shown in Event Details + reminders)
-  ceremony: "3:00 PM",
-  reception: "5:30 PM", // start of program
+  entourageCall: "3:00 PM", // entourage assembly
+  guestArrival: "3:30 PM", // guests arrival / assembly (shown in Event Details + reminders)
+  ceremony: "4:00 PM",
+  reception: "6:30 PM", // start of program
 }
 
 // ── Venues ──────────────────────────────────────────────────────────────────
 
 const CEREMONY_VENUE = {
-  name: "The Ranch",
-  address: "Barangay San Jose (Tarlac- Sta. Rosa Road), Tarlac, Philippines, 2300",
-  map: "https://maps.app.goo.gl/atAiK6xcjfuhgRJB7",
-  photos: ["/Details/ceremony.jpg", "/Details/ceremony1.jpg", "/Details/ceremony2.jpg","/Details/ceremony3.jpg"],
+  name: "The Vistas-Pampanga: Vista Mons",
+  address: "Sta. Maria Street, Daraga, Albay, Philippines",
+  map: "https://maps.app.goo.gl/YzwRn1EEmeD8BFTT8",
+  photos: ["/Details/new-ceremony (1).jpg", "/Details/new-ceremony (2).jpg","/Details/new-ceremony (3).jpg"],
 }
 const RECEPTION_VENUE = {
-  name: "The Ranch",
-  address: "Barangay San Jose (Tarlac- Sta. Rosa Road), Tarlac, Philippines, 2300",
-  map: "https://maps.app.goo.gl/atAiK6xcjfuhgRJB7",
-  photos: ["/Details/ceremony.jpg", "/Details/ceremony1.jpg", "/Details/ceremony2.jpg","/Details/ceremony3.jpg"],
+  name: "A.V.P. CATERING SERVICES",
+  address: "Imelda Roces Avenue, Legazpi City, Philippines",
+  map: "https://maps.app.goo.gl/xdVvkKnqptJgyuBF9",
+  photos: ["/Details/reception (1).jpg", "/Details/reception (2).jpg", "/Details/reception (3).jpg"],
 }
 
 // ── Venue cards (Event Details section) ─────────────────────────────────────
@@ -107,7 +107,7 @@ const RECEPTION_VENUE = {
 // showDate     = show the big Month / Day / Year
 // showArrival  = show "Arrival: <guest arrival time>" (otherwise "At <time>")
 const VENUE_CARDS = {
-  layout: "combined" as "separate" | "combined",
+  layout: "combined" as "separate" | "combined",  
   // Used when layout is "combined"
   combined: {
     badge: "Ceremony & Reception",
@@ -139,11 +139,11 @@ const VENUE_CARDS = {
 
 // ── RSVP & contact ──────────────────────────────────────────────────────────
 const RSVP = {
-  deadline: " November 30, 2026",
+  deadline: " December 01, 2026",
   coordinator: "{groom} / {bride}", // {groom} / {bride} → couple nicknames
   phone: "to be announced",
 }
-const HASHTAGS = ["#LAICAfoundtherightPAT"] // ⚠ check — looks like it's from a previous couple
+const HASHTAGS = ["#JeffandBreichelle"] // ⚠ check — looks like it's from a previous couple
 
 // ── Attire guide (Event Details → Attire Guidelines) ────────────────────────
 // SHOW = which cards to display AND their order, top to bottom. Examples:
@@ -163,11 +163,11 @@ const HASHTAGS = ["#LAICAfoundtherightPAT"] // ⚠ check — looks like it's fro
 //     highlight: phrase inside details shown bold + underlined ("" for none)
 // Guest dress code colors — also shown in the "Dress Code" gentle reminder
 const DRESS_CODE_PALETTE: AttireColor[] = [
-  { name: "Peach Beige", hex: "#EBC8B5" },
-  { name: "Blush Pink", hex: "#E8B7B4" },
-  { name: "Dusty Rose", hex: "#D4948A" },
-  { name: "Terracotta", hex: "#984641" },
-  { name: "Burgundy", hex: "#541C1B" },
+  { name: "Dusty Pink", hex: "#D99FA6" },
+  { name: "Blush Rose", hex: "#E8BFC4" },
+  { name: "Silver Gray", hex: "#B8B9BD" },
+  { name: "Charcoal Gray", hex: "#777C85" },
+  { name: "Cream Beige", hex: "#E9D8C5" },
 ];
 
 // Attire groups shown in the Details section (components/sections/details.tsx).
@@ -177,24 +177,28 @@ const DRESS_CODE_PALETTE: AttireColor[] = [
 //   Each side (ladies / gentlemen) has a label, an optional intro (details, with an
 //   optional highlighted phrase) and an optional list of roles with what they wear.
 const ATTIRE = {
-  show: ["sponsors", "guests"] as AttireGroupId[],
+  show: ["sponsors","entourage","guests"] as AttireGroupId[],
 
   entourage: {
     title: "Entourage",
-    image: "/Details/Entourage.png",
+    image: "/Details/new-entourage (2).png",
     dressCode: "Formal Attire",
     palette: [] as AttireColor[], // no palette on the entourage card
     note: "",
+
     ladies: {
       label: "Ladies",
-      details: "Floor-length gowns in peach beige, dusty rose, terracotta or burgundy. Soft, flowy fabrics like chiffon or tulle are perfect, and each of you may wear a different shade from the palette.",
-      highlight: "Floor-length gowns",
+      details:
+        "Elegant floor-length formal gowns in soft Dusty Pink. Different gown styles and silhouettes are welcome, featuring delicate fabrics such as chiffon, satin, or tulle.",
+      highlight: "Dusty Pink Floor-Length Formal Gowns",
       roles: [] as { role: string; attire: string }[],
     },
+
     gentlemen: {
       label: "Gentlemen",
-      details: "An ivory Barong Tagalog with dark brown slacks and brown leather shoes.",
-      highlight: "ivory Barong Tagalog",
+      details:
+        "Classic Gray Formal Suits paired with crisp White Long-Sleeved Dress Shirts, elegant Dusty Pink Neckties, and polished Black Formal Shoes.",
+      highlight: "Gray Formal Suits with Dusty Pink Neckties",
       roles: [] as { role: string; attire: string }[],
     },
   },
@@ -231,50 +235,55 @@ const ATTIRE = {
 
   sponsors: {
     title: "Principal Sponsors",
-    image: "/Details/entourage-new.png",
+    image: "/Details/new-sponsor.png",
     dressCode: "Formal Attire",
     palette: [] as AttireColor[], // no palette on the sponsors card
     note: "We invite our principal sponsors to dress elegantly in these designated colors to complement our wedding motif.",
     ladies: {
       label: "Ninang",
-      details: "Floor-length formal gowns in Old Rose.",
-      highlight: "Floor-length formal gowns",
+      details: "Formal Dress or Long Gown in the Shades of Cream/Beige.",
+      highlight: "Formal Dress or Long Gown",
       roles: [] as { role: string; attire: string }[],
     },
     gentlemen: {
       label: "Ninong",
-      details: "Classic black suits with black ties and formal shoes.",
-      highlight: "Classic black suits",
+      details:
+        "Elegant Long Sleeve Barong Tagalog paired with classic Black Formal Pants. A traditional and sophisticated ensemble that creates a polished.",
+      highlight: "Long Sleeve Barong and Black Pants",
       roles: [] as { role: string; attire: string }[],
     },
   },
 
-  guests: {
-    title: "Wedding Guests",
-    image: "/Details/guest-new.png",
-    dressCode: "Formal / Semi-Formal Attire",
-    palette: DRESS_CODE_PALETTE,
-    note: "We encourage everyone to follow our color palette to create a beautiful and harmonious look for our special day.",
-    ladies: {
-      label: "Ladies",
-      details: "Flowy long or midi dresses in any of our wedding palette colors: Peach Beige, Blush Pink, Dusty Rose, Terracotta, or Burgundy.",
-      highlight: "Flowy long or midi dresses",
-      roles: [] as { role: string; attire: string }[],
-    },
-    gentlemen: {
-      label: "Gentlemen",
-      details: "Long-sleeved collared shirts in Beige, Blush Pink, Dusty Rose, Terracotta, or Burgundy, paired with Khaki, Brown, or Black slacks.",
-      highlight: "Long-sleeved collared shirts",
-      roles: [] as { role: string; attire: string }[],
-    },
+guests: {
+  title: "Wedding Guests",
+  image: "/Details/new-guest (2).png",
+  dressCode: "Semi-Formal Attire",
+  palette: DRESS_CODE_PALETTE,
+  note: "We kindly encourage our guests to dress in shades of Dusty Pink and Gray to create a beautiful, coordinated, and harmonious celebration on our special day.",
+
+  ladies: {
+    label: "Ladies",
+    details:
+      "Elegant short, midi, or long dresses in soft shades of Dusty Pink. Flowy silhouettes, delicate fabrics, and graceful designs are encouraged to create a romantic semi-formal look.",
+    highlight: "Short or Long Dresses in Dusty Pink",
+    roles: [] as { role: string; attire: string }[],
   },
+
+  gentlemen: {
+    label: "Gentlemen",
+    details:
+      "Semi-formal collared polo shirts or long-sleeved button-down shirts in soft Dusty Pink or complementary Gray shades, paired with tailored Gray trousers or slacks.",
+    highlight: "Polo/Long Sleeve and Gray Pants",
+    roles: [] as { role: string; attire: string }[],
+  },
+},
 }
 
 // ── Website address (used for QR codes, link previews, table finder) ────────
 // NEXT_PUBLIC_SITE_URL (env) overrides this when set.
 const SITE_URL = "https://pat-and-laica.weddinginvitationrsvp.com/"
 // Image shown when the link is shared (Facebook, Messenger, Viber, X, …) — 1200×630 JPG in /public
-const LINK_PREVIEW_IMAGE = "/Details/Linlkahgdj.png"
+const LINK_PREVIEW_IMAGE = "/monogram/thumbnail.png"
 
 // Site address with env override applied and no trailing slash — no need to edit
 export const canonicalSiteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? SITE_URL).replace(/\/$/, "")
@@ -286,51 +295,51 @@ const DISPLAY_MODE = "plain" as "photos" | "plain"
 
 // ── Shared images ───────────────────────────────────────────────────────────
 const BRAND = {
-  monogram: "/monogram/monogram-new.png",
+  monogram: "/monogram/MONOGRAM.png",
   coupleNameImage: "/Details/newcoupelNames.png", // couple-name lettering (loader, envelope)
-  seal: "/monogram/seal-mongoram.png", // envelope wax seal
-  backgroundMusic: "/background_music/Libu-Libong Buwan (Uuwian) - Kyle Raphael (Lyric Video).mp3",
+  seal: "/monogram/Dusty Rose JB Wax Seal.png", // envelope wax seal
+  backgroundMusic: "/background_music/Your Love (Piano Instrumental).mp3",
 }
 
 // Couple photos reused across the site (gallery, loader, reminders, snap & share, closing)
 const COUPLE_PHOTOS = [
-  "/mobile-background/couples (9).webp",
-  "/mobile-background/couples (11).webp",
-  "/mobile-background/couples (13).webp",
-  "/mobile-background/couples (17).webp",
-  "/mobile-background/couples (18).webp",
-  "/mobile-background/couples (57).webp",
-  "/mobile-background/couples (81).webp",
-  "/mobile-background/couples (83).webp",
-  "/mobile-background/couples (5).webp",
+  "/mobile-background/slide-image (1).png",
+  "/mobile-background/slide-image (2).png",
+  "/mobile-background/slide-image (3).png",
+  "/mobile-background/slide-image (4).png",
+  "/mobile-background/slide-image (5).png",
+  "/mobile-background/slide-image (6).png",
+  "/mobile-background/slide-image (7).png",
+  "/mobile-background/slide-image (8).png",
+  "/mobile-background/slide-image (9).png",
 ]
 
 // Portraits for the envelope reveal + the main cover photo (soft natural light, no heavy filters)
 const COUPLE_PORTRAITS = {
-  groom: "/mobile-background/couples (61).webp",
-  bride: "/mobile-background/couples (52).webp",
-  cover: "/Details/CoupleImage.png", // home hero cover photo
+  groom: "/mobile-background/image-here-card-M.png",
+  bride: "/mobile-background/image-here-card-F.png",
+  cover: "/mobile-background/image-here-card-couple.png", // home hero cover photo
 }
 
 // Sliding photo marquee behind the loader and envelope — files in /public/mobile-background
-const MARQUEE_PHOTO_COUNT = 88
+const MARQUEE_PHOTO_COUNT = 9 // need to match the number of files in /public/mobile-background
 const MARQUEE_PHOTOS = Array.from(
   { length: MARQUEE_PHOTO_COUNT },
-  (_, i) => `/mobile-background/couples (${i + 1}).webp`,
+  (_, i) => `/mobile-background/slide-image (${i + 1}).png`,
 )
 
 // ── Decorations ─────────────────────────────────────────────────────────────
 // Change a path here to swap it on every section at once.
 // To change ONE section only, override it there, e.g. decos: { ...SECTION_DECOS, footerVine: "" }
 const DECOR = {
-  cornerTopLeft: "/deco/new-deco/left-top-corner-new.png",
-  cornerTopRight: "/deco/new-deco/right-top-corner-new.png",
-  cornerBottomLeft: "/deco/new-deco/left-bottom-corner.png",
-  cornerBottomRight: "/deco/new-deco/right-bottom-corner.png",
-  cornerOverlayTopLeft: "/deco/new-deco/left-top-corner.png", // floral corner layered over the top vines (loader + envelope)
-  cornerOverlayTopRight: "/deco/new-deco/right-top-corner.png",
-  headerOrnament: "/deco/new-deco/small-center.png", // small sprig above titles
-  footerVine: "/deco/new-deco/long-center.png", // long vine at section ends
+  cornerTopLeft: "/deco/new-grey-floral/top-corner-l.png",
+  cornerTopRight: "/deco/new-grey-floral/top-corner-r.png",
+  cornerBottomLeft: "/deco/new-grey-floral/bot-corner-l.png",
+  cornerBottomRight: "/deco/new-grey-floral/bot-corner-r.png",
+  cornerOverlayTopLeft: "/deco/new-grey-floral/top-corner-l.png", // floral corner layered over the top vines (loader + envelope)
+  cornerOverlayTopRight: "/deco/new-grey-floral/top-corner-r.png",
+  headerOrnament: "/deco/new-grey-floral/small-middle.png", // small sprig above titles + below the home hero cover
+  footerVine: "/deco/new-grey-floral/flower-long-line.png", // long vine at section ends
   sideLeft: "/deco/lovestorydeco/Elegant-Eucalyptus-Left.png", // love story side sprigs
   sideRight: "/deco/lovestorydeco/Elegant-Eucalyptus-Right.png",
 }
@@ -358,7 +367,7 @@ const COUPLE_LABEL = `${COUPLE.groomNickname} & ${COUPLE.brideNickname}`
    ============================================================================ */
 
 // Principal sponsors Google Apps Script — used by the main page and /inviteone
-const SPONSORS_API = "https://script.google.com/macros/s/AKfycbzFw1p7V90y2pH1p_69JuYtU1c_gQKbCjL5VE8_cVePe6otUp8tJVjQMt4HQV7OHNzI/exec"
+const SPONSORS_API = "https://script.google.com/macros/s/AKfycbzxVUv_3IoXmd8_aifczVOTczQ9Gje-J1NeoPu36OLurE09JXOCSmIzrdt18sra48xIeA/exec"
 
 export const siteConfig = {
   siteUrl: SITE_URL,
@@ -369,15 +378,15 @@ export const siteConfig = {
     backgroundMusic: BRAND.backgroundMusic,
   },
   googleAPI:{
-    messageForm: "https://docs.google.com/forms/d/e/1FAIpQLSd6xU-2yIy1NqlDo1FCVKD094Ay00LtKJEDwi3-Q53_2gZEyQ/formResponse",   //done
-    message: "https://script.google.com/macros/s/AKfycbwIPJzCLc8JWTdspGwGK1U--8lpoFbSX4RekoWfVEdxV5TZi-9tet2W4fhAuPUj1N4o/exec",  //done
-    guestList: "https://script.google.com/macros/s/AKfycbwsNT-ysI-taavtWmmS76ac1ym8IVqbs_4QJsNqaxtMokqAY7HMnfAnnqnggLSw0QMg/exec",  //done
-    guestRequest: "https://script.google.com/macros/s/AKfycbxjHMMZqSpaxVrfrUi6ZNmjyX2CfDHz07mL8MFHHOdcsYBhktanmo0RWjbrh2xEDevX/exec",   //done
-    entourage: "https://script.google.com/macros/s/AKfycby2kEmQ3V40LGIVrqUugN7C-jiivs3XRIhr1RnSjSldfCb6MfyorQQm53jrVtkrmhBr/exec",  //done
+    messageForm: "https://docs.google.com/forms/d/e/1FAIpQLScmdfC0YxJ97LkuugVYlyDVLFMK7c9ymg8IQfWlVobQgPe0oA/formResponse",   //done
+    message: "https://script.google.com/macros/s/AKfycbysnXDR6tqT9Yuob--opJaKzCgmt5QJ5XHF8Q5_HZrm78DivE5EiJphMuQx6Gaisvl35Q/exec", //done 
+    guestList: "https://script.google.com/macros/s/AKfycbzoEbAZmY2B3YR0T5U6Nfm0au-q4Vs4xt6kb7lpYQ7XYyTPxsPzP-7Dqq4A23W4GaHW1w/exec",  //done
+    guestRequest: "https://script.google.com/macros/s/AKfycbyzvrZ-BHl7LGA30oh5V7gzjkuIYBrqDQpDYXiHf6oVDFKRqUG5VmN_IfI0Sa5u7ulGyA/exec",//done  
+    entourage: "https://script.google.com/macros/s/AKfycbzGRQV1U78FO1oMwIW338alarfKq4pRzVNIPROzvbdDXv8GjGQeX1pLRbdcBaHLJoqx8A",  
     sponsors: SPONSORS_API,  //done 
     // Principal sponsors shown on /inviteone and /invitetwo (entourage section)
     sponsorsInviteOne: SPONSORS_API, // same sheet as sponsors above
-    sponsorsInviteTwo: "https://script.google.com/macros/s/AKfycbzFw1p7V90y2pH1p_69JuYtU1c_gQKbCjL5VE8_cVePe6otUp8tJVjQMt4HQV7OHNzI/exec",
+    sponsorsInviteTwo: "https://script.google.com/macros/s/AKfycbzxVUv_3IoXmd8_aifczVOTczQ9Gje-J1NeoPu36OLurE09JXOCSmIzrdt18sra48xIeA/exec",
 ////google share 
     googleShare: "https://docs.google.com/spreadsheets/d/18q3VFEsfZUw1UP0iD8yOEGRrDeKoQGI0hy9KyuttP3s/edit?usp=sharing",
     videoMessageForm:
@@ -415,9 +424,9 @@ export const siteConfig = {
     coupleNameImage: BRAND.coupleNameImage,
     // Shown in the three date cards (Month / Day / Year), left to right (display: "photos")
     photos: [
-      "/frontboxes/couple (1).webp",
-      "/frontboxes/couple (2).webp",
-      "/frontboxes/couple (3).webp",
+      "/mobile-background/image-here-galary.webp",
+      "/mobile-background/image-here-galary.webp",
+      "/mobile-background/image-here-galary.webp",
     ],
     dateLabels: ["Month", "Day", "Year"],
     // Plain mode invitation card — classic invitation wording around the couple's names ("" to hide a line)
@@ -483,9 +492,9 @@ export const siteConfig = {
     // Closing block: big word, hashtag, then the verse (also shown in Snap & Share)
     closingEyebrow: "Puhon", // large word on top — "" hides it
     closingHashtag: HASHTAGS[0] ?? "", // "" hides it
-    closingQuoteLead: "He hath made every thing beautiful in his time", // bold first line ("" for none)
-    closingQuote: "also he hath set the world in their heart, so that no man can find out the work that God maketh from the beginning to the end.",
-    closingCitation: "Ecclesiastes 3:11 KJV",
+    closingQuoteLead: "He has made everything beautiful in its time", // bold first line ("" for none)
+    closingQuote: "",
+    closingCitation: "Ecclesiastes 3:11",
     eucalyptusDecos: {
       topLeft: DECOR.sideLeft,
       bottomRight: DECOR.sideRight,
@@ -494,78 +503,135 @@ export const siteConfig = {
     },
     // The story, one chapter at a time. date → small caps line above the title ("" shows "Chapter 0X").
     // image → photo beside the text ("" for none). {groom} / {bride} → nicknames.
-    chapters: [
-      {
-        date: "August 2025",
-        title: "Where It All Began",
-        theme: "light" as const,
-        layout: "image-left" as const,
-        image: "/mobile-background/couples (31).webp",
-        imageAlt: "{groom} and {bride}",
-        paragraphs: [
-          "Every love story has a first page, and ours was written at Golden Faith Academy. Two people in the same place at the same time, neither of us knowing that a simple meeting would quietly become the start of everything.",
-        ],
-      },
-      {
-        date: "March 2016",
-        title: "The First Hello",
-        theme: "dark" as const,
-        layout: "image-right" as const,
-        image: "/mobile-background/couples (70).webp",
-        imageAlt: "{groom} and {bride} smiling together",
-        paragraphs: [
-          "Then came our first real conversation. It started small, the way the best things often do: a few words, a little laughter, and a feeling that this was easy.",
-          "Before we knew it, one conversation turned into many, and talking to each other became the best part of our days.",
-        ],
-      },
-      {
-        date: "January 7, 2018",
-        title: "Made It Official",
-        theme: "light" as const,
-        layout: "image-left" as const,
-        image: "/mobile-background/couples (80).webp",
-        imageAlt: "{groom} and {bride} together",
-        paragraphs: [
-          "On January 7, 2018, we stopped wondering and started choosing each other. What began as a friendship became a promise to show up, to grow together, and to make room for each other in every plan, big or small.",
-        ],
-      },
-      {
-        date: "July 25, 2026",
-        title: "She Said Yes!",
-        theme: "dark" as const,
-        layout: "image-right" as const,
-        image: "/mobile-background/couples (4).webp",
-        imageAlt: "{groom} and {bride} after the proposal",
-        paragraphs: [
-          "And then, on July 25, 2026, {groom} asked the question, and {bride} said YES! Every conversation, every adventure, and every quiet, ordinary day of loving each other had been leading us here.",
-        ],
-      },
-      {
-        date: "Him & Her",
-        title: "Perfectly Different",
-        theme: "light" as const,
-        layout: "image-left" as const,
-        image: "/mobile-background/couples (42).webp",
-        imageAlt: "{groom} and {bride}",
-        paragraphs: [
-          "Along the way, we learned just how different we are, and how perfectly matched.",
-          "{groom} is happiest with coffee in hand, a good nap on standby, the latest political news, and an action-packed movie. He has also truly mastered the art of doing absolutely nothing.",
-          "{bride} creates little masterpieces, bakes sweet treats, cooks with love, gets lost in K-drama worlds, and always says yes to the next adventure.",
-        ],
-      },
-      {
-        date: "Us",
-        title: "Our Little World",
-        theme: "dark" as const,
-        layout: "image-right" as const,
-        image: "/mobile-background/couples (56).webp",
-        imageAlt: "{groom} and {bride}",
-        paragraphs: [
-          "Together, we've built a world that's entirely ours. We spoil our fur baby Naira like royalty, never say no to another hotpot date, and keep collecting the little moments that become big memories.",
-          "Above everything else, we choose quality time, because being together is our favorite place to be. Now we're counting down to forever, and we can't wait to celebrate its beginning with you. ♡",
-        ],
-      },
-    ],
+    
+
+  chapters: [
+    {
+      date: "Lorem Ipsum",
+      title: "Lorem Ipsum Dolor Sit Amet",
+      theme: "light" as const,
+      layout: "image-left" as const,
+      image: "/mobile-background/image-here.png",
+      imageAlt: "{groom} and {bride}",
+      paragraphs: [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      ],
+    },
+    {
+      date: "Lorem Ipsum",
+      title: "Consectetur Adipiscing Elit",
+      theme: "dark" as const,
+      layout: "image-right" as const,
+      image: "/mobile-background/image-here.png",
+      imageAlt: "{groom} and {bride} smiling together",
+      paragraphs: [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus urna sed urna ultricies ac tempor dui sagittis. In condimentum facilisis porta.",
+        "Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna diam porttitor mauris, quis sollicitudin sapien justo in libero.",
+      ],
+    },
+    {
+      date: "Lorem Ipsum",
+      title: "Vivamus Luctus Urna",
+      theme: "light" as const,
+      layout: "image-left" as const,
+      image: "/mobile-background/image-here.png",
+      imageAlt: "{groom} and {bride} together",
+      paragraphs: [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.",
+      ],
+    },
+    {
+      date: "Lorem Ipsum",
+      title: "Praesent Dapibus Neque",
+      theme: "dark" as const,
+      layout: "image-right" as const,
+      image: "/mobile-background/image-here.png",
+      imageAlt: "{groom} and {bride} together",
+      paragraphs: [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae libero ac risus egestas placerat. Vestibulum commodo felis quis tortor. Ut aliquam sollicitudin leo. Cras iaculis ultricies nulla. Donec quis dui at dolor tempor interdum.",
+      ],
+    },
+    {
+      date: "Lorem Ipsum",
+      title: "Integer Vitae Libero",
+      theme: "light" as const,
+      layout: "image-left" as const,
+      image: "/mobile-background/image-here.png",
+      imageAlt: "{groom} and {bride}",
+      paragraphs: [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam.",
+        "Sed arcu. Cras consequat. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat.",
+      ],
+    },
+    {
+      date: "Lorem Ipsum",
+      title: "Pellentesque Habitant Morbi",
+      theme: "dark" as const,
+      layout: "image-right" as const,
+      image: "/mobile-background/image-here.png",
+      imageAlt: "{groom} and {bride}",
+      paragraphs: [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean dignissim pellentesque felis. Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam.",
+        "Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat.",
+      ],
+    },
+    {
+      date: "Lorem Ipsum",
+      title: "Aliquam Erat Volutpat",
+      theme: "light" as const,
+      layout: "image-left" as const,
+      image: "/mobile-background/image-here.png",
+      imageAlt: "{groom} and {bride}",
+      paragraphs: [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec consectetuer ligula vulputate sem tristique cursus. Nam nulla quam, gravida non, commodo a, sodales sit amet, nisi. Pellentesque fermentum dolor.",
+      ],
+    },
+    {
+      date: "Lorem Ipsum",
+      title: "Vestibulum Ante Ipsum",
+      theme: "dark" as const,
+      layout: "image-right" as const,
+      image: "/mobile-background/image-here.png",
+      imageAlt: "{groom} and {bride}",
+      paragraphs: [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae. Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.",
+      ],
+    },
+    {
+      date: "Lorem Ipsum",
+      title: "Curabitur Non Nulla",
+      theme: "light" as const,
+      layout: "image-left" as const,
+      image: "/mobile-background/image-here.png",
+      imageAlt: "{groom} and {bride}",
+      paragraphs: [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Nulla porttitor accumsan tincidunt. Vivamus suscipit tortor eget felis porttitor volutpat.",
+      ],
+    },
+    {
+      date: "Lorem Ipsum",
+      title: "Donec Sollicitudin Molestie",
+      theme: "dark" as const,
+      layout: "image-right" as const,
+      image: "/mobile-background/image-here.png",
+      imageAlt: "{groom} and {bride}",
+      paragraphs: [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sollicitudin molestie malesuada. Proin eget tortor risus. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.",
+      ],
+    },
+    {
+      date: "Lorem Ipsum",
+      title: "Mauris Blandit Aliquet",
+      theme: "light" as const,
+      layout: "image-left" as const,
+      image: "/mobile-background/image-here.png",
+      imageAlt: "{groom} and {bride}",
+      paragraphs: [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.",
+      ],
+    },
+  ],
+
   },
   // Gallery section (components/sections/gallery.tsx)
   gallery: {
@@ -582,14 +648,14 @@ export const siteConfig = {
     // Uses COUPLE_PHOTOS; replace with your own list if the gallery should differ.
     // text → caption used as the photo's description
     images: [
-      { image: "/mobile-background/couples (5).webp", text: "image 1" },
-      { image: "/mobile-background/couples (11).webp", text: "image 2" },
-      { image: "/mobile-background/couples (13).webp", text: "image 3" },
-      { image: "/mobile-background/couples (17).webp", text: "image 4" },
-      { image: "/mobile-background/couples (18).webp", text: "image 5" },
-      { image: "/mobile-background/couples (57).webp", text: "image 6" },
-      { image: "/mobile-background/couples (81).webp", text: "image 7" },
-      { image: "/mobile-background/couples (83).webp", text: "image 8" },
+      { image: "/mobile-background/image-here-galary.webp", text: "image 1" },
+      { image: "/mobile-background/image-here-galary.webp", text: "image 2" },
+      { image: "/mobile-background/image-here-galary.webp", text: "image 3" },
+      { image: "/mobile-background/image-here-galary.webp", text: "image 4" },
+      { image: "/mobile-background/image-here-galary.webp", text: "image 5" },
+      { image: "/mobile-background/image-here-galary.webp", text: "image 6" },
+      { image: "/mobile-background/image-here-galary.webp", text: "image 7" },
+      { image: "/mobile-background/image-here-galary.webp", text: "image 8" },
     ],
   },
 
@@ -650,10 +716,10 @@ export const siteConfig = {
       description: "A few thoughtful notes to help everyone enjoy our celebration.",
       // Small photos that take turns above the "Gentle Reminders" title (files in /public/box)
       images: [
-        "/box/box (1).jpg",
-        "/box/box (2).jpg",
-        "/box/box (3).jpg",
-        "/box/box (4).jpg",
+        "/box/image-here-box-box (1).png",
+        "/box/image-here-box-box (2).png",
+        "/box/image-here-box-box (3).png",
+        "/box/image-here-box-box (4).png",
       ],
       // showPalette: shows the dress code palette after the first paragraph
       items: [

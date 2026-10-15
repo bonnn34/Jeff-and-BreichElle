@@ -3573,3 +3573,88 @@
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
 }
+
+/* Invitation overlay colors only. Image and layout rules remain unchanged. */
+.env-invite-screen--plain .env-invite-hint,
+.env-invite-screen--plain .env-invite-reveal-copy h2,
+.env-invite-screen--plain .env-invite-reveal-copy p {
+  color: var(--color-welcome-navy);
+  -webkit-text-fill-color: var(--color-welcome-navy);
+  text-shadow:
+    0 0 1px var(--color-motif-soft),
+    0 0 4px color-mix(in srgb, var(--color-motif-soft) 95%, transparent),
+    0 0 12px color-mix(in srgb, var(--color-motif-soft) 90%, transparent),
+    0 0 24px color-mix(in srgb, var(--color-motif-blush) 70%, transparent);
+}
+
+.env-invite-screen--plain .env-invite-days-to-go {
+  color: var(--color-welcome-heading);
+  -webkit-text-fill-color: var(--color-welcome-heading);
+  text-shadow:
+    0 0 1px var(--color-motif-soft),
+    0 0 4px color-mix(in srgb, var(--color-motif-soft) 95%, transparent),
+    0 0 12px color-mix(in srgb, var(--color-motif-soft) 90%, transparent);
+}
+
+.env-invite-screen--plain .env-invite-enter-btn {
+  color: var(--color-motif-soft);
+  background: var(--color-welcome-navy);
+  border-color: color-mix(in srgb, var(--color-motif-medium) 55%, transparent);
+  box-shadow:
+    0 0 0 4px color-mix(in srgb, var(--color-motif-soft) 60%, transparent),
+    0 12px 26px color-mix(in srgb, var(--color-welcome-navy) 22%, transparent);
+}
+
+.env-invite-screen--plain .env-invite-enter-btn:hover {
+  color: var(--color-motif-soft);
+  background: color-mix(in srgb, var(--color-welcome-navy) 88%, var(--color-motif-medium));
+}
+
+/* Inner invitation letter colors only. Portrait and floral rules stay intact. */
+.env-invite-screen--plain .env-invite-letter {
+  background:
+    radial-gradient(85% 35% at 50% 0%, rgb(255 255 255 / 95%) 0%, transparent 72%),
+    linear-gradient(
+      180deg,
+      var(--color-motif-soft) 0%,
+      var(--color-motif-soft) 60%,
+      color-mix(in srgb, var(--color-motif-blush) 55%, var(--color-motif-soft)) 100%
+    );
+  border-color: color-mix(in srgb, var(--color-motif-medium) 45%, transparent);
+  box-shadow:
+    0 18px 40px color-mix(in srgb, var(--color-welcome-navy) 12%, transparent),
+    0 6px 14px color-mix(in srgb, var(--color-motif-medium) 16%, transparent),
+    inset 0 1px 0 rgb(255 255 255 / 90%);
+}
+
+.env-invite-screen--plain .env-invite-letter-frame {
+  border-color: color-mix(in srgb, var(--color-motif-medium) 45%, transparent);
+}
+
+.env-invite-screen--plain .env-invite-letter-frame::after {
+  border-color: color-mix(in srgb, var(--color-motif-yellow) 40%, transparent);
+}
+
+.env-invite-screen--plain .env-invite-letter-label__word {
+  color: var(--color-welcome-navy);
+  -webkit-text-fill-color: var(--color-welcome-navy);
+}
+
+.env-invite-screen--plain .env-invite-letter-label__script,
+.env-invite-screen--plain .env-invite-names__and {
+  color: var(--color-motif-medium);
+  -webkit-text-fill-color: var(--color-motif-medium);
+}
+
+.env-invite-screen--plain .env-invite-letter-date {
+  color: var(--color-welcome-heading);
+}
+
+.env-invite-screen--plain .env-invite-letter-invited {
+  color: var(--color-welcome-text);
+}
+
+.env-invite-screen--plain .env-invite-names__nick {
+  color: var(--color-welcome-navy);
+  -webkit-text-fill-color: var(--color-welcome-navy);
+}

@@ -224,6 +224,8 @@ export function Hero() {
   // Plain mode cover: one natural couple photograph beside the invitation wording
   const coverPhoto = loading.coverPhoto ?? defaultSiteConfig.loadingScreen.coverPhoto
   const coverPhotoAlt = loading.coverPhotoAlt ?? defaultSiteConfig.loadingScreen.coverPhotoAlt
+  const coverOrnament =
+    loading.plainInvite.ornament ?? defaultSiteConfig.loadingScreen.plainInvite.ornament
   const reduceMotion = useReducedMotion()
   const [visible, setVisible] = useState(false)
 
@@ -302,7 +304,17 @@ export function Hero() {
 
       <div className={`home-hero-content relative z-10 mx-auto flex w-full max-w-4xl flex-1 flex-col items-center justify-center px-5 pb-[clamp(1rem,4vh,2rem)] pt-[clamp(6rem,24vw,7.5rem)] sm:pb-[clamp(2.5rem,9vh,5rem)] sm:pt-[clamp(3.75rem,10vw,6rem)] text-center sm:px-8${isPlain && coverPhoto ? " home-hero-content--cover" : ""}`}>
         {isPlain && coverPhoto && (
-          <motion.figure className="home-hero-cover" {...fadeUp(0)}>
+          <motion.figure
+            className="home-hero-cover"
+            style={
+              {
+                "--home-hero-cover-ornament": coverOrnament
+                  ? `url("${encodeURI(coverOrnament)}")`
+                  : "none",
+              } as React.CSSProperties
+            }
+            {...fadeUp(0)}
+          >
             <div className="home-hero-cover__frame">
               <Image
                 src={encodeURI(coverPhoto)}
