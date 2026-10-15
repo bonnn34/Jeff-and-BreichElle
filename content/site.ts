@@ -281,7 +281,7 @@ guests: {
 
 // ── Website address (used for QR codes, link previews, table finder) ────────
 // NEXT_PUBLIC_SITE_URL (env) overrides this when set.
-const SITE_URL = "https://pat-and-laica.weddinginvitationrsvp.com/"
+const SITE_URL = "https://jeff-and-breich-elle-six.vercel.app/"
 // Image shown when the link is shared (Facebook, Messenger, Viber, X, …) — 1200×630 JPG in /public
 const LINK_PREVIEW_IMAGE = "/monogram/thumbnail.png"
 
